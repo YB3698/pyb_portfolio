@@ -9,7 +9,7 @@ const Portfolio = () => {
     const page2 = document.getElementById("page2");
     const end = document.getElementsByClassName("content-end")[0];
     const vh = window.innerHeight;
-    const sections = ["page1", "page2", "interview", "project"];
+    const sections = ["page1", "page2", "project"];
     const sectionPositions = {};
 
     function calculatePositions() {
@@ -46,15 +46,15 @@ const Portfolio = () => {
         page2.style.zIndex = "1";
       }
 
-      if (scrollY >= fh - vh - 150) {
-        end.style.display = "flex";
-        setTimeout(() => end.classList.add("show"), 10);
-      } else {
-        end.classList.remove("show");
-        setTimeout(() => {
-          if (!end.classList.contains("show")) end.style.display = "none";
-        }, 1000);
-      }
+    if (window.innerHeight + scrollY >= document.body.scrollHeight - 100) {
+      end.style.display = "flex";
+      setTimeout(() => end.classList.add("show"), 10);
+    } else {
+      end.classList.remove("show");
+      setTimeout(() => {
+        if (!end.classList.contains("show")) end.style.display = "none";
+      }, 1000);
+    }
     });
 
     navLinks.forEach((link) => {
@@ -95,9 +95,6 @@ const Portfolio = () => {
           </li>
           <li>
             <a href="#page2">SKILL</a>
-          </li>
-          <li>
-            <a href="#interview">INTERVIEW</a>
           </li>
           <li>
             <a href="#project">PROJECTS</a>
@@ -153,33 +150,6 @@ const Portfolio = () => {
         </div>
       </section>
       {/* 세 번째 페이지 */}
-      <section id="interview">
-        <h2>Interview</h2>
-        <div className="interview-group">
-          <div className="question">Q. 개발자가 되고 싶은 이유는?</div>
-          <p className="answer">
-            저는 경영학과를 졸업해 다양한 계열사가 있는 회사에 들어가 회계·인사·경영지원업무를 담당하며 여러 계열사의 업무 프로세스를 경험할 수 있었습니다.<br />
-            그 중 같은 사무실에서 근무했던 개발자들과 가까워지면서 문제를 직접 해결하고 가치를 창출하는 개발분야에 매력을 느껴 공부를 시작했습니다. 처음엔 단순한 호기심으로 시작했지만, 공부를 할수록 재미를 느꼈고 이 분야에서 꾸준히 성장할 수 있겠다는 확신이 들었습니다. 그동안 쌓아온 업무 프로세스에 대한 이해를 바탕으로 현업의 니즈를 정확히 파악한 시스템을 개발하고 싶습니다.<br />
-            <strong>단순히 시스템을 사용하는 것을 넘어서 직접 만들고 개선하여 실질적인 가치를 창출하는 개발자가 되는 것이 제 목표입니다.</strong>
-          </p>
-        </div>
-        <div className="interview-group">
-          <div className="question">Q. 일할 때 가장 중요하게 생각하는 것은?</div>
-          <p className="answer">
-            저는 일을 할 때 가장 중요하게 생각하는 것은 <strong>책임감과 정확한 소통</strong> 입니다. 경영지원팀에서 근무할 당시에도 본사에서 다른 지역에 있는 회사를 전담했기 때문에 원활한 소통이 무엇보다 중요했습니다. 작은 일이라도 회사 메신저나 이메일로 관련자들에게 참조를 걸어 실시간으로 상황을 공유했습니다. 그러다보니 소통과 책임감이 더 자연스럽게 몸에 배었습니다.<br />
-            특히 개발은 혼자만의 일이 아니라 팀 단위로 협업하는 과정이라고 생각하기 때문에, 항상 소통과 책임을 중심에 두고 일하겠습니다.
-          </p>
-        </div>
-        <div className="interview-group">
-          <div className="question">Q. 앞으로의 계획은?</div>
-          <p className="answer">
-            현재는 자격증 취득과 부경대 빅데이터 기반 개발자 양성과정을 통해 개발자로서의 기반을 다지고 있습니다.<br />
-            입사 후에는 실무에 필요한 학습을 최우선으로 하되, 체계적인 성장을 위해 관련 자격증 취득도 병행하며 지속적으로 역량을 쌓아나갈 계획입니다.<br />
-            저는 MES 시스템의 실시간 데이터 처리와 제조 현장의 복잡한 요구사항을 효율적으로 구현할 수 있는 전문 개발자로 성장하는 것이 목표입니다.
-          </p>
-        </div>
-      </section>
-      {/* 네번째 페이지 */}
       <section id="project">
         <h2>PROJECT</h2>
         <div className="project-container">
@@ -189,7 +159,7 @@ const Portfolio = () => {
             </h3>
             <div className="project-scroll-area">
               <div className="project-item">
-                <img alt="메뉴카테고리조회회" src="./img/project/메뉴카테고리조회.png" />
+                <img alt="메뉴카테고리조회" src="./img/project/메뉴카테고리조회.png" />
               </div>
               <div className="project-item">
                 <img alt="음료조회" src="./img/project/메뉴조회.png" />
@@ -217,10 +187,6 @@ const Portfolio = () => {
               <div className="project-item">
                 <img alt="기술스택" src="./img/project/포폴-기술스택.png" />
                 <p>기술스택</p>
-              </div>
-              <div className="project-item">
-                <img alt="interview" src="./img/project/포폴-interview.png" />
-                <p>나에 대한 소개</p>
               </div>
               <div className="project-item">
                 <img alt="프로젝트" src="./img/project/포폴-project.png" />

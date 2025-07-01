@@ -8,7 +8,6 @@ body {
   font-family: sans-serif;
   overflow-x: hidden; /* 가로 스크롤 방지 */
   background: #f0f0f0;
-  min-height: 400vh; /* 페이지 총 길이: 4배 화면 높이 */
   scroll-behavior: smooth; /* 부드러운 스크롤 적용 */
 }
 /* 상단 네비게이션 바 스타일 */
@@ -29,14 +28,16 @@ body {
   margin: 0;
   padding: 1rem 0;
   list-style: none;
+  gap: 3.2rem;
 }
 
 .navbar li a {
   text-decoration: none; /* 텍스트 줄 안그어지게하기 */
   color: yellow;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
   transition: color 0.3s;
+  /* letter-spacing: 5px; */
 }
 
 .navbar li a:hover {
@@ -199,54 +200,6 @@ body {
 }
 
 /* 세번째 페이지*/
-#interview {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  background: rgb(10, 10, 10);
-}
-#interview h2 {
-  color: yellow;
-  font-size: 2.5rem;
-  border-bottom: 2px solid yellow;
-}
-.interview-group {
-  background-color: #1f1f1f;
-  color: white;
-  border: 1px solid #444;
-  border-radius: 8px;
-  padding: 0.8rem 1.5rem;
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.05);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  width: 60%;
-  min-width: 600px;
-}
-.question {
-  font-size: 1.5rem;
-  color: yellow;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-.answer {
-  font-size: 1rem;
-  /* line-height: 1.5; */
-}
-#contact {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  background: rgb(10, 10, 10);
-  color: white;
-  font-size: 1.5rem;
-}
-
-/* 네번째 페이지 */
 #project {
   height: auto;
   display: flex;

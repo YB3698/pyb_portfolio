@@ -126,28 +126,41 @@ const Portfolio = () => {
       <div style={{ height: "100vh" }}></div>
       {/* 두 번째 페이지 */}
       <section id="page2">
-        <h2>SKILLS</h2>
-        <div className="skills-group">
-          <h3>Languages</h3>
-          <div className="skills-boxes">
-            <div className="skill">Python</div>
-            <div className="skill">JavaScript</div>
-            <div className="skill">SQL</div>
-            <div className="skill">HTML5</div>
-            <div className="skill">CSS</div>
+       <h2>SKILLS</h2>
+        <div className="skills-row">
+          <div className="skills-group">
+            <h3>Languages</h3>
+            <div className="skills-boxes">
+              <div className="skill">Python</div>
+              <div className="skill">Java</div>
+              <div className="skill">JavaScript</div>
+              <div className="skill">HTML5</div>
+              <div className="skill">CSS</div>
+              <div className="skill">SQL</div>
+            </div>
+          </div>
+
+          <div className="skills-group">
+            <h3>Frameworks</h3>
+            <div className="skills-boxes">
+              <div className="skill">React</div>
+              <div className="skill">Spring Boot</div>
+            </div>
+          </div>
+
+          <div className="skills-group">
+            <h3>Tools</h3>
+            <div className="skills-boxes">
+              <div className="skill">VS Code</div>
+              <div className="skill">DBeaver</div>
+              <div className="skill">Docker</div>
+              <div className="skill">GitHub</div>
+              <div className="skill">JupyterLab</div>
+              <div className="skill">Qt Designer</div>
+            </div>
           </div>
         </div>
-        <div className="skills-group">
-          <h3>Tools</h3>
-          <div className="skills-boxes">
-            <div className="skill">VsCode</div>
-            <div className="skill">DBeaver</div>
-            <div className="skill">Docker</div>
-            <div className="skill">GitHub</div>
-            <div className="skill">JupyterLab</div>
-            <div className="skill">Qt Designer</div>
-          </div>
-        </div>
+
       </section>
       {/* 세 번째 페이지 */}
       <section id="project">
@@ -155,42 +168,45 @@ const Portfolio = () => {
         <div className="project-container">
           <div className="project-block">
             <h3 className="project-title">
-              <a href="https://github.com/BSEom/miniP_kiosk.git">☕카페 키오스크☕</a>
+              <a href="https://github.com/BSEom/miniP_kiosk.git">☕자동 매출 분석 스마트 키오스크☕</a>
             </h3>
             <div className="project-scroll-area">
               <div className="project-item">
-                <img alt="메뉴카테고리조회" src="./img/project/메뉴카테고리조회.png" />
+                <img
+                  alt="home"
+                  src="/img/project/home.png"
+                />
               </div>
               <div className="project-item">
-                <img alt="음료조회" src="./img/project/메뉴조회.png" />
+                <img alt="manager" src="./img/project/manager.png" />
               </div>
               <div className="project-item">
-                <img alt="메뉴수정_삭제_주문" src="./img/project/메뉴수정_삭제_주문.png" />
+                <img alt="sales" src="./img/project/sales.png" />
               </div>
               <div className="project-item">
-                <img alt="관리자페이지" src="./img/project/관리자 페이지.png" />
-              </div>
-              <div className="project-item">
-                <img alt="관리자페이지-매출조회" src="./img/project/매출조회.png" />
+                <img alt="매출관리" src="./img/project/sales2.png" />
               </div>
             </div>
           </div>
           <div className="project-block">
             <h3 className="project-title">
-              <a href="https://github.com/YB3698/portfolio.git">🖥️포토폴리오 사이트🖥️</a>
+              <a href="https://github.com/YB3698/portfolio.git">🥎AI 기반 야구 통계 & 커뮤니티 플랫폼 "야~! 모여"🥎</a>
             </h3>
             <div className="project-scroll-area">
               <div className="project-item">
-                <img alt="메인화면" src="./img/project/포폴-main.png" style={{ width: "700px", height: "auto" }} />
-                <p>메인화면</p>
+                <img alt="메인화면" src="./img/project/baseball_home.png" />
               </div>
               <div className="project-item">
-                <img alt="기술스택" src="./img/project/포폴-기술스택.png" />
-                <p>기술스택</p>
+                <img alt="회원가입" src="./img/project/baseball_login.png" />
               </div>
               <div className="project-item">
-                <img alt="프로젝트" src="./img/project/포폴-project.png" />
-                <p>프로젝트 상세 내용</p>
+                <img alt="경기일정 및 결과" src="./img/project/baseball_result.png" />
+              </div>
+              <div className="project-item">
+                <img alt="게시판" src="./img/project/baseball_post.png" />
+              </div>
+              <div className="project-item">
+                <img alt="mypage" src="./img/project/baseball_mypage.png" />
               </div>
             </div>
           </div>

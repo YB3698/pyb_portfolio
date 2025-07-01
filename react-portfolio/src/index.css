@@ -24,7 +24,6 @@ body {
 .navbar ul {
   display: flex;
   justify-content: center;
-  gap: 2rem;
   margin: 0;
   padding: 1rem 0;
   list-style: none;
@@ -37,7 +36,6 @@ body {
   font-weight: bold;
   font-size: 1.5rem;
   transition: color 0.3s;
-  /* letter-spacing: 5px; */
 }
 
 .navbar li a:hover {
@@ -164,7 +162,18 @@ body {
   padding-bottom: 0.5rem;
 }
 .skills-group {
+  background-color: #111;
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-width: 250px;
+  max-width: 300px;
+  flex: 1 1 300px; /* 반응형 배치 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   margin-bottom: 2rem;
+  height: 100%; /* 높이 자동으로 */
+  min-height: 420px;  /* 동일한 카드 높이로 맞추기 */
+  flex-direction: column;
+  justify-content: space-between;
 }
 .skills-group h3 {
   font-size: 1.5rem;
@@ -197,6 +206,16 @@ body {
   transform: translateY(-5px);
   background-color: #333;
   cursor: pointer;
+}
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  align-items: stretch;
 }
 
 /* 세번째 페이지*/
@@ -282,6 +301,7 @@ body {
 }
 .project-item {
   margin-bottom: 3rem;
+  max-width: 720px;
   background-color: #222;
   padding: 1rem;
   border-radius: 10px;

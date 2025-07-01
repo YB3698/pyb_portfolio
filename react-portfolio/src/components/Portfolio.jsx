@@ -208,6 +208,12 @@ const Portfolio = () => {
               <div className="project-item">
                 <img alt="mypage" src="./img/project/baseball_mypage.png" />
               </div>
+              <div className="project-item">
+                <img alt="vote" src="./img/project/baseball_vote.png" />
+              </div>
+              <div className="project-item">
+                <img alt="신고" src="./img/project/baseball_pp.png" />
+              </div>
             </div>
           </div>
         </div>

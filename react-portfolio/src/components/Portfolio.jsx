@@ -108,7 +108,8 @@ const Portfolio = () => {
           <p className="main-text">
             저는 백엔드 신입 개발자 <strong>박유빈</strong> 입니다.
           </p>
-          <div className="intro-img"></div>
+          <div className="intro-img">
+          </div>
           <p className="sub-text">
             저는 도전을 즐기는 신입 개발자 박유빈입니다.<br />
             새로운 기술들을 배우는 것을 즐기며,<br />
@@ -174,45 +175,45 @@ const Portfolio = () => {
               <div className="project-item">
                 <img
                   alt="home"
-                  src="/img/project/home.png"
+                  src="/img/home.png"
                 />
               </div>
               <div className="project-item">
-                <img alt="manager" src="./img/project/manager.png" />
+                <img alt="manager" src="./img/manager.png" />
               </div>
               <div className="project-item">
-                <img alt="sales" src="./img/project/sales.png" />
+                <img alt="sales" src="./img/sales.png" />
               </div>
               <div className="project-item">
-                <img alt="매출관리" src="./img/project/sales2.png" />
+                <img alt="매출관리" src="./img/sales2.png" />
               </div>
             </div>
           </div>
           <div className="project-block">
             <h3 className="project-title">
-              <a href="https://github.com/YB3698/portfolio.git">🥎AI 기반 야구 통계 & 커뮤니티 플랫폼 "야~! 모여"🥎</a>
+              <a href="https://github.com/YB3698/team5-baseball-project.git">🥎AI 기반 야구 통계 & 커뮤니티 플랫폼 "야~! 모여"🥎</a>
             </h3>
             <div className="project-scroll-area">
               <div className="project-item">
-                <img alt="메인화면" src="./img/project/baseball_home.png" />
+                <img alt="메인화면" src="./img/baseball_home.png" />
               </div>
               <div className="project-item">
-                <img alt="회원가입" src="./img/project/baseball_login.png" />
+                <img alt="회원가입" src="./img/baseball_login.png" />
               </div>
               <div className="project-item">
-                <img alt="경기일정 및 결과" src="./img/project/baseball_result.png" />
+                <img alt="경기일정 및 결과" src="./img/baseball_result.png" />
               </div>
               <div className="project-item">
-                <img alt="게시판" src="./img/project/baseball_post.png" />
+                <img alt="게시판" src="./img/baseball_post.png" />
               </div>
               <div className="project-item">
-                <img alt="mypage" src="./img/project/baseball_mypage.png" />
+                <img alt="mypage" src="./img/baseball_mypage.png" />
               </div>
               <div className="project-item">
-                <img alt="vote" src="./img/project/baseball_vote.png" />
+                <img alt="vote" src="./img/baseball_vote.png" />
               </div>
               <div className="project-item">
-                <img alt="신고" src="./img/project/baseball_pp.png" />
+                <img alt="신고" src="./img/baseball_pp.png" />
               </div>
             </div>
           </div>

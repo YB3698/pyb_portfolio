@@ -25,26 +25,35 @@ const Portfolio = () => {
       const scrollY = window.scrollY;
       const fh = document.body.scrollHeight;
 
-      if (scrollY < vh) {
+      if (window.innerWidth > 768) {
+        // PC 환경: 스크롤에 따라 page1을 숨김
+        if (scrollY < vh) {
+          page1.style.display = "flex";
+          page1.style.pointerEvents = "auto";
+        } else {
+          page1.style.display = "none";
+          page1.style.pointerEvents = "none";
+        }
+      } else {
+        // 모바일 환경: 항상 보여주기
         page1.style.display = "flex";
         page1.style.pointerEvents = "auto";
-      } else {
-        page1.style.display = "none";
-        page1.style.pointerEvents = "none";
       }
 
-      if (scrollY <= vh) {
-        page2.style.position = "fixed";
-        page2.style.top = `${vh - scrollY}px`;
-        page2.style.left = "0";
-        page2.style.width = "100vw";
-        page2.style.height = "100vh";
-        page2.style.zIndex = "150";
-      } else {
-        page2.style.position = "relative";
-        page2.style.top = "auto";
-        page2.style.zIndex = "1";
-      }
+    if (window.innerWidth > 768) {
+      page1.style.display = scrollY < vh ? "flex" : "none";
+      page1.style.pointerEvents = scrollY < vh ? "auto" : "none";
+
+      page2.style.position = "relative";  // 항상 자연스럽게 흐르게
+      page2.style.top = "auto";
+      page2.style.zIndex = "1";
+    } else {
+      page1.style.display = "flex";
+      page1.style.pointerEvents = "auto";
+      page2.style.position = "relative";
+      page2.style.top = "auto";
+      page2.style.zIndex = "1";
+    }
 
     if (window.innerHeight + scrollY >= document.body.scrollHeight - 100) {
       end.style.display = "flex";
@@ -225,7 +234,7 @@ const Portfolio = () => {
           <div className="intro-wrapper">
             <p className="main-text-end">끝까지 봐주셔서 감사합니다!</p>
             <p className="sub-text-end">
-              아이슈타인은 "배우기를 멈춘 사람은 성장도 멈춘사람이다"라고 말했습니다.<br />
+              아인슈타인은 "배우기를 멈춘 사람은 성장도 멈춘사람이다"라고 말했습니다.<br />
               백엔드 개발자로 성장하기 위해 낯선 기술도 두려워하지 않고 도전하며,<br />
               더 나은 기술을 만드는 개발자가 되고자 꾸준히 노력하겠습니다.
             </p>

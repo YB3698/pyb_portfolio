@@ -58,7 +58,8 @@ body {
   justify-content: center; /* 세로 가운데 정렬 */
   align-items: center; /* 가로 가운데 정렬 */
   font-size: 1.5rem;
-  z-index: 100; /* 다른 페이지보다 위에 위치 */
+  z-index: 1; /* 다른 페이지보다 위에 위치 */
+  transition: opacity 0.3s ease;
 }
 .info {
   position: absolute;
@@ -149,9 +150,11 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  min-height: 100vh; /* 화면 높이만큼 */
-  position: relative; /* 기본 위치 */
-  z-index: 1; /* 첫 페이지보다 뒤 */
+  min-height: 100vh; /* 화면보다 작을 땐 채우고, 넘치면 자동 확장 */
+  height: auto;       /* 중요: 크기 고정하지 않음 */
+  position: relative;
+  z-index: 3;
+  overflow: visible;  /* 넘친 내용도 보여지게 */
 }
 /* 그룹 제목 */
 #page2 h2 {
@@ -226,6 +229,7 @@ body {
   align-items: center;
   background-color: black;
   position: relative;
+  z-index: 3;
 }
 #project h2 {
   display: inline;
@@ -310,7 +314,7 @@ body {
 }
 .project-item img {
   width: 100%;
-  max-width: 700px;
+  /* max-width: 700px; */
   display: block;
   margin: 0 auto;
 }
@@ -372,4 +376,77 @@ body {
 .link:hover {
   background-color: rgb(140, 210, 220);
   border-radius: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .intro-wrapper {
+    margin-top: -90px;
+  }
+  #page2, #project {
+    height: auto !important;
+    position: relative !important;
+    padding: 2rem 1rem;
+  }
+  .info {
+    font-size: 0.9rem;
+    top: 100%;
+    text-align: center;
+    word-break: break-word;      /* 단어 기준 줄바꿈 */
+    white-space: normal;         /* 줄바꿈 허용 */
+    line-height: 1.5;
+  }
+  
+  .sub-text, .sub-text-end {
+    font-size: 0.9rem;
+    padding: 1rem;
+    text-align: center;
+    word-break: break-word;      /* 단어 기준 줄바꿈 */
+    white-space: normal;         /* 줄바꿈 허용 */
+    line-height: 1.5;            /* 줄 간격 여유 */
+  }
+  
+  .background-title {
+  font-size: 40px; /* 또는 30~50px 등 적절히 조절 */
+  top: 20%; /* 필요하면 위치도 조정 가능 */
+  }
+  .intro-img {
+    width: 180px;
+    height: 180px;
+    background-size: 180px auto;
+  }
+
+  .main-text {
+    font-size: 1.3rem;
+  }
+
+  .skills-group {
+    min-width: 90%;
+    max-width: 100%;
+  }
+
+  .project-block {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .project-scroll-area {
+    max-height: 400px;
+    padding: 1rem;
+  }
+
+  .main-text-end {
+    font-size: 1.8rem;
+  }
+
+  .content-end {
+    font-size: 1.5rem;
+  }
+
+  .navbar ul {
+    flex-direction: row;
+    gap: 3rem;
+  }
+  .navbar li a {
+  font-size: 1rem;  /* 👈 여기에 모바일 전용 크기 조절 추가 */
+  }
 }

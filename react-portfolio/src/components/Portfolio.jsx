@@ -182,10 +182,7 @@ const Portfolio = () => {
             </h3>
             <div className="project-scroll-area">
               <div className="project-item">
-                <img
-                  alt="home"
-                  src="/img/home.png"
-                />
+                <img alt="home" src="./img/home.png" />
               </div>
               <div className="project-item">
                 <img alt="manager" src="./img/manager.png" />

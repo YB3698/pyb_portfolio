@@ -1,3 +1,8 @@
+import {FaPython, FaJava, FaJsSquare, FaHtml5, FaCss3Alt, FaDatabase} from "react-icons/fa";
+import {SiSpringboot, SiDbeaver,SiDocker, SiGithub, SiJupyter} from "react-icons/si";
+import { DiReact } from "react-icons/di";
+import { MdDesignServices } from "react-icons/md";
+import { VscVscode } from 'react-icons/vsc';  
 import { useEffect } from "react";
 
 const Portfolio = () => {
@@ -23,47 +28,30 @@ const Portfolio = () => {
 
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-      const fh = document.body.scrollHeight;
 
       if (window.innerWidth > 768) {
-        // PC 환경: 스크롤에 따라 page1을 숨김
-        if (scrollY < vh) {
-          page1.style.display = "flex";
-          page1.style.pointerEvents = "auto";
-        } else {
-          page1.style.display = "none";
-          page1.style.pointerEvents = "none";
-        }
+        page1.style.display = scrollY < vh ? "flex" : "none";
+        page1.style.pointerEvents = scrollY < vh ? "auto" : "none";
+        page2.style.position = "relative";
+        page2.style.top = "auto";
+        page2.style.zIndex = "1";
       } else {
-        // 모바일 환경: 항상 보여주기
         page1.style.display = "flex";
         page1.style.pointerEvents = "auto";
+        page2.style.position = "relative";
+        page2.style.top = "auto";
+        page2.style.zIndex = "1";
       }
 
-    if (window.innerWidth > 768) {
-      page1.style.display = scrollY < vh ? "flex" : "none";
-      page1.style.pointerEvents = scrollY < vh ? "auto" : "none";
-
-      page2.style.position = "relative";  // 항상 자연스럽게 흐르게
-      page2.style.top = "auto";
-      page2.style.zIndex = "1";
-    } else {
-      page1.style.display = "flex";
-      page1.style.pointerEvents = "auto";
-      page2.style.position = "relative";
-      page2.style.top = "auto";
-      page2.style.zIndex = "1";
-    }
-
-    if (window.innerHeight + scrollY >= document.body.scrollHeight - 100) {
-      end.style.display = "flex";
-      setTimeout(() => end.classList.add("show"), 10);
-    } else {
-      end.classList.remove("show");
-      setTimeout(() => {
-        if (!end.classList.contains("show")) end.style.display = "none";
-      }, 1000);
-    }
+      if (window.innerHeight + scrollY >= document.body.scrollHeight - 100) {
+        end.style.display = "flex";
+        setTimeout(() => end.classList.add("show"), 10);
+      } else {
+        end.classList.remove("show");
+        setTimeout(() => {
+          if (!end.classList.contains("show")) end.style.display = "none";
+        }, 1000);
+      }
     });
 
     navLinks.forEach((link) => {
@@ -88,7 +76,6 @@ const Portfolio = () => {
       });
     });
 
-    // cleanup
     return () => {
       window.removeEventListener("resize", calculatePositions);
       window.removeEventListener("scroll", () => {});
@@ -99,80 +86,71 @@ const Portfolio = () => {
     <>
       <nav className="navbar">
         <ul>
-          <li>
-            <a href="#page1">ABOUT ME</a>
-          </li>
-          <li>
-            <a href="#page2">SKILL</a>
-          </li>
-          <li>
-            <a href="#project">PROJECTS</a>
-          </li>
+          <li><a href="#page1">ABOUT ME</a></li>
+          <li><a href="#page2">SKILL</a></li>
+          <li><a href="#project">PROJECTS</a></li>
         </ul>
       </nav>
-      {/* 첫 번째 페이지 */}
+
       <section id="page1">
         <span className="background-title">BACK-END</span>
         <div className="intro-wrapper">
-          <p className="main-text">
-            저는 백엔드 신입 개발자 <strong>박유빈</strong> 입니다.
-          </p>
-          <div className="intro-img">
-          </div>
+          <p className="main-text">저는 백엔드 신입 개발자 <strong>박유빈</strong> 입니다.</p>
+          <div className="intro-img"></div>
           <p className="sub-text">
             저는 도전을 즐기는 신입 개발자 박유빈입니다.<br />
             새로운 기술들을 배우는 것을 즐기며,<br />
             피드백과 커뮤니케이션을 통해 실력있는 개발자가 되고 싶습니다!
-          </p>
-          <div className="info">
-            <p>
-              <strong>🎂 생년월일:</strong> 1999.07.16 <strong>📞 연락처:</strong> 010-3165-3697 <strong>📧 이메일:</strong> dbqls3698@naver.com
-            </p>
-          </div>
+          </p>         
         </div>
         <div id="scroll-down-arrow">▼</div>
       </section>
-      {/* 빈 공간: 스크롤 시 두 번째 페이지가 등장할 위치 */}
+
       <div style={{ height: "100vh" }}></div>
-      {/* 두 번째 페이지 */}
+
+      {/* SKILLS */}
       <section id="page2">
-       <h2>SKILLS</h2>
+        <h2>SKILLS</h2>
         <div className="skills-row">
+          {/* Languages */}
           <div className="skills-group">
             <h3>Languages</h3>
             <div className="skills-boxes">
-              <div className="skill">Python</div>
-              <div className="skill">Java</div>
-              <div className="skill">JavaScript</div>
-              <div className="skill">HTML5</div>
-              <div className="skill">CSS</div>
-              <div className="skill">SQL</div>
+              <div className="skill"><FaPython size={24} /> Python</div>
+              <div className="skill"><FaJava size={24} /> Java</div>
+              <div className="skill"><FaJsSquare size={24} /> JavaScript</div>
+              <div className="skill"><FaHtml5 size={24} /> HTML5</div>
+              <div className="skill"><FaCss3Alt size={24} /> CSS</div>
+              <div className="skill"><FaDatabase size={24} /> SQL</div>
             </div>
           </div>
 
+          {/* Frameworks */}
           <div className="skills-group">
             <h3>Frameworks</h3>
             <div className="skills-boxes">
-              <div className="skill">React</div>
-              <div className="skill">Spring Boot</div>
+              <div className="skill"><DiReact size={24} /> React</div>
+              <div className="skill"><SiSpringboot size={24} /> Spring Boot</div>
             </div>
           </div>
 
+          {/* Tools */}
           <div className="skills-group">
             <h3>Tools</h3>
             <div className="skills-boxes">
-              <div className="skill">VS Code</div>
-              <div className="skill">DBeaver</div>
-              <div className="skill">Docker</div>
-              <div className="skill">GitHub</div>
-              <div className="skill">JupyterLab</div>
-              <div className="skill">Qt Designer</div>
+              <div className="skill"><VscVscode size={24} /> VS Code</div>
+              <div className="skill"><SiDbeaver size={24} /> DBeaver</div>
+              <div className="skill"><SiDocker size={24} /> Docker</div>
+              <div className="skill"><SiGithub size={24} /> GitHub</div>
+              <div className="skill"><SiJupyter size={24} /> JupyterLab</div>
+              <div className="skill"><MdDesignServices size={24} /> Qt Designer</div>
             </div>
           </div>
-        </div>
 
+        </div>
       </section>
-      {/* 세 번째 페이지 */}
+
+      {/* PROJECTS (생략 없이 그대로) */}
       <section id="project">
         <h2>PROJECT</h2>
         <div className="project-container">
@@ -181,18 +159,10 @@ const Portfolio = () => {
               <a href="https://github.com/BSEom/miniP_kiosk.git">☕자동 매출 분석 스마트 키오스크☕</a>
             </h3>
             <div className="project-scroll-area">
-              <div className="project-item">
-                <img alt="home" src="./img/home.png" />
-              </div>
-              <div className="project-item">
-                <img alt="manager" src="./img/manager.png" />
-              </div>
-              <div className="project-item">
-                <img alt="sales" src="./img/sales.png" />
-              </div>
-              <div className="project-item">
-                <img alt="매출관리" src="./img/sales2.png" />
-              </div>
+              <div className="project-item"><img alt="home" src="./img/home.png" /></div>
+              <div className="project-item"><img alt="manager" src="./img/manager.png" /></div>
+              <div className="project-item"><img alt="sales" src="./img/sales.png" /></div>
+              <div className="project-item"><img alt="매출관리" src="./img/sales2.png" /></div>
             </div>
           </div>
           <div className="project-block">
@@ -200,42 +170,37 @@ const Portfolio = () => {
               <a href="https://github.com/YB3698/team5-baseball-project.git">🥎AI 기반 야구 통계 & 커뮤니티 플랫폼 "야~! 모여"🥎</a>
             </h3>
             <div className="project-scroll-area">
-              <div className="project-item">
-                <img alt="메인화면" src="./img/baseball_home.png" />
-              </div>
-              <div className="project-item">
-                <img alt="회원가입" src="./img/baseball_login.png" />
-              </div>
-              <div className="project-item">
-                <img alt="경기일정 및 결과" src="./img/baseball_result.png" />
-              </div>
-              <div className="project-item">
-                <img alt="게시판" src="./img/baseball_post.png" />
-              </div>
-              <div className="project-item">
-                <img alt="mypage" src="./img/baseball_mypage.png" />
-              </div>
-              <div className="project-item">
-                <img alt="vote" src="./img/baseball_vote.png" />
-              </div>
-              <div className="project-item">
-                <img alt="신고" src="./img/baseball_pp.png" />
-              </div>
+              <div className="project-item"><img alt="메인화면" src="./img/baseball_home.png" /></div>
+              <div className="project-item"><img alt="회원가입" src="./img/baseball_login.png" /></div>
+              <div className="project-item"><img alt="경기일정 및 결과" src="./img/baseball_result.png" /></div>
+              <div className="project-item"><img alt="게시판" src="./img/baseball_post.png" /></div>
+              <div className="project-item"><img alt="mypage" src="./img/baseball_mypage.png" /></div>
+              <div className="project-item"><img alt="vote" src="./img/baseball_vote.png" /></div>
+              <div className="project-item"><img alt="신고" src="./img/baseball_pp.png" /></div>
             </div>
           </div>
         </div>
       </section>
+
       <section id="end">
         <div className="content-end">
           <span className="background-title">Thank You</span>
           <div className="intro-wrapper">
             <p className="main-text-end">끝까지 봐주셔서 감사합니다!</p>
             <p className="sub-text-end">
-              아인슈타인은 "배우기를 멈춘 사람은 성장도 멈춘사람이다"라고 말했습니다.<br />
+              아인슈타인은 "배우기를 멈춘 사람은 성장도 멈춘 사람이다"라고 말했습니다.<br />
               백엔드 개발자로 성장하기 위해 낯선 기술도 두려워하지 않고 도전하며,<br />
               더 나은 기술을 만드는 개발자가 되고자 꾸준히 노력하겠습니다.
             </p>
-            <a className="link" href="https://github.com/YB3698">GitHub</a>
+          <div className="info">
+            <strong>🎂 생년월일:</strong> 1999.07.16 
+            <strong> 📞 연락처:</strong> 010-3165-3697 
+            {/* <strong>📧 이메일:</strong> dbqls3698@naver.com */}
+          </div >
+          <div className="link">
+            <a href="https://github.com/YB3698">GitHub</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dbqls3698@naver.com" target="_blank" rel="noopener noreferrer">Email</a>
+          </div>
           </div>
         </div>
       </section>

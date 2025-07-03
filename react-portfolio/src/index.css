@@ -61,13 +61,6 @@ body {
   z-index: 1; /* 다른 페이지보다 위에 위치 */
   transition: opacity 0.3s ease;
 }
-.info {
-  position: absolute;
-  font-size: 1rem;
-  top: 31rem;
-  white-space: nowrap;
-  color: #222222e7;
-}
 /* 배경에 희미하게 보이는 큰 텍스트 */
 .background-title {
   position: absolute;
@@ -115,7 +108,7 @@ body {
 .sub-text {
   text-align: center;
   font-size: 1rem;
-  margin-top: 0.5rem;
+  margin-top: 3.5rem;
 }
 #scroll-down-arrow {
   position: absolute;
@@ -163,6 +156,10 @@ body {
   color: yellow;
   border-bottom: 2px solid yellow;
   padding-bottom: 0.5rem;
+}
+.education {
+  font-size: 1.2rem;
+  text-align: center;
 }
 .skills-group {
   background-color: #111;
@@ -341,6 +338,13 @@ body {
   font-size: 1.5rem;
   z-index: 100; /* 다른 페이지보다 위에 위치 */
 }
+.info {
+  position: absolute;
+  font-size: 1rem;
+  top: 17rem;
+  white-space: nowrap;
+  color: #222222e7;
+}
 .main-text-end {
   position: relative;
   top: -30px;
@@ -373,7 +377,10 @@ body {
   top: 50%;
   color: black;
 }
-.link:hover {
+.link a {
+  margin: 1rem;
+}
+.link a:hover {
   background-color: rgb(140, 210, 220);
   border-radius: 5px;
 }

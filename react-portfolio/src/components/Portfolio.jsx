@@ -2,7 +2,9 @@ import {FaPython, FaJava, FaJsSquare, FaHtml5, FaCss3Alt, FaDatabase} from "reac
 import {SiSpringboot, SiDbeaver,SiDocker, SiGithub, SiJupyter} from "react-icons/si";
 import { DiReact } from "react-icons/di";
 import { MdDesignServices } from "react-icons/md";
-import { VscVscode } from 'react-icons/vsc';  
+import { VscVscode } from 'react-icons/vsc';
+import { FaGithub } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { useEffect } from "react";
 
 const Portfolio = () => {
@@ -116,12 +118,12 @@ const Portfolio = () => {
           <div className="skills-group">
             <h3>Languages</h3>
             <div className="skills-boxes">
-              <div className="skill"><FaPython size={24} /> Python</div>
-              <div className="skill"><FaJava size={24} /> Java</div>
-              <div className="skill"><FaJsSquare size={24} /> JavaScript</div>
-              <div className="skill"><FaHtml5 size={24} /> HTML5</div>
-              <div className="skill"><FaCss3Alt size={24} /> CSS</div>
-              <div className="skill"><FaDatabase size={24} /> SQL</div>
+              <div className="skill"><FaPython size={24} color="#3776AB" /> Python</div>
+              <div className="skill"><FaJava size={24} color="#007396" /> Java</div>
+              <div className="skill"><FaJsSquare size={24} color="#F7DF1E" /> JavaScript</div>
+              <div className="skill"><FaHtml5 size={24} color="#E34F26" /> HTML5</div>
+              <div className="skill"><FaCss3Alt size={24} color="#1572B6" /> CSS</div>
+              <div className="skill"><FaDatabase size={24} color="#336791" /> SQL</div>
             </div>
           </div>
 
@@ -129,8 +131,8 @@ const Portfolio = () => {
           <div className="skills-group">
             <h3>Frameworks</h3>
             <div className="skills-boxes">
-              <div className="skill"><DiReact size={24} /> React</div>
-              <div className="skill"><SiSpringboot size={24} /> Spring Boot</div>
+              <div className="skill"><DiReact size={24} color="#61DAFB" /> React</div>
+              <div className="skill"><SiSpringboot size={24} color="#6DB33F" /> Spring Boot</div>
             </div>
           </div>
 
@@ -138,12 +140,12 @@ const Portfolio = () => {
           <div className="skills-group">
             <h3>Tools</h3>
             <div className="skills-boxes">
-              <div className="skill"><VscVscode size={24} /> VS Code</div>
-              <div className="skill"><SiDbeaver size={24} /> DBeaver</div>
-              <div className="skill"><SiDocker size={24} /> Docker</div>
-              <div className="skill"><SiGithub size={24} /> GitHub</div>
-              <div className="skill"><SiJupyter size={24} /> JupyterLab</div>
-              <div className="skill"><MdDesignServices size={24} /> Qt Designer</div>
+              <div className="skill"><VscVscode size={24} color="#007ACC" /> VS Code</div>
+              <div className="skill"><SiDbeaver size={24} color="#2496ED" /> DBeaver</div>
+              <div className="skill"><SiDocker size={24} color="#2496ED" /> Docker</div>
+              <div className="skill"><SiGithub size={24} color="#181717" /> GitHub</div>
+              <div className="skill"><SiJupyter size={24} color="#F37626" /> JupyterLab</div>
+              <div className="skill"><MdDesignServices size={24} color="#41CD52" /> Qt Designer</div>
             </div>
           </div>
 
@@ -193,13 +195,14 @@ const Portfolio = () => {
               더 나은 기술을 만드는 개발자가 되고자 꾸준히 노력하겠습니다.
             </p>
           <div className="info">
-            <strong>🎂 생년월일:</strong> 1999.07.16 
+            <strong>🎂 생년월일:</strong> 1999.07.16 &nbsp; &nbsp;
             <strong> 📞 연락처:</strong> 010-3165-3697 
-            {/* <strong>📧 이메일:</strong> dbqls3698@naver.com */}
           </div >
           <div className="link">
-            <a href="https://github.com/YB3698">GitHub</a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dbqls3698@naver.com" target="_blank" rel="noopener noreferrer">Email</a>
+            <a href="https://github.com/YB3698">
+             <FaGithub size={20} color="#181717" />GitHub</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dbqls3698@naver.com" target="_blank" rel="noopener noreferrer">
+            <MdEmail size={20} color="#181717" />Email</a>
           </div>
           </div>
         </div>
